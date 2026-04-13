@@ -60,29 +60,32 @@ export default function ChatWidget() {
 
       const data = await res.json();
 
+      let content: string;
+
       if (res.ok) {
-        setMessages((prev) => [
-          ...prev,
-          { role: "assistant", content: data.reply },
-        ]);
-      } else if (res.status === 429) {
-        const time = formatRetryDelay(data?.retryDelay);
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: `Sorry, I'm tired. Try again in ${time}.`,
-          },
-        ]);
+        content = data.reply;
       } else {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: "Sorry, something went wrong. Please try again.",
-          },
-        ]);
+        switch (res.status) {
+          case 429: {
+            const time = formatRetryDelay(data?.retryDelay);
+            content = `Sorry, I'm tired. Try again in ${time}.`;
+            break;
+          }
+
+          case 503:
+            content =
+              "Sorry, I'm unavailable right now (Free-tier project, Edoardo is poor and can't pay me!). Please try again later, in the meantime look at the links provided.";
+            break;
+
+          default:
+            content = "Sorry, something went wrong. Please try again.";
+        }
       }
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content },
+      ]);
     } catch {
       setMessages((prev) => [
         ...prev,

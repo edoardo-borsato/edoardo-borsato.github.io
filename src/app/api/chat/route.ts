@@ -65,6 +65,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (status === 503) {
+      return NextResponse.json(
+        { error: "Service unavailable" },
+        { status: 503 }
+      );
+    }
+
     return NextResponse.json(
       { error: "Failed to generate response" },
       { status: 500 }
