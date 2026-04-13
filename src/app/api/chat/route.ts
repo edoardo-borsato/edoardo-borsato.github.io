@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAnthropicClient } from "@/lib/anthropic";
+import { getGeminiClient } from "@/lib/gemini";
 import { SYSTEM_PROMPT } from "@/lib/system-prompt";
 
 export async function POST(request: NextRequest) {
@@ -13,24 +13,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.GOOGLE_API_KEY) {
       return NextResponse.json(
         { error: "API key not configured" },
         { status: 500 }
       );
     }
 
-    const client = getAnthropicClient();
-
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1024,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: message }],
+    const client = getGeminiClient();
+    const model = client.getGenerativeModel({
+      model: "gemini-2.0-flash",
+      systemInstruction: SYSTEM_PROMPT,
+      generationConfig: {
+        maxOutputTokens: 1024,
+      },
     });
 
-    const textContent = response.content.find((block) => block.type === "text");
-    const reply = textContent ? textContent.text : "Sorry, I could not generate a response.";
+    const result = await model.generateContent(message);
+    const reply = result.response.text() || "Sorry, I could not generate a response.";
 
     return NextResponse.json({ reply });
   } catch (error) {

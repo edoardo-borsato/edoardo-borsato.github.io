@@ -20,7 +20,7 @@ Edoardo Borsato is a Software Engineer based in Italy with experience in backend
 ## Projects
 
 - **Xpense** — A personal finance tracking app built with .NET MAUI Blazor
-- **This website** — A Next.js + TypeScript personal site with an AI chatbot (you!)
+- **This website** — A Next.js + TypeScript personal site with an AI chatbot powered by Gemini (you!)
 
 ## Instructions
 

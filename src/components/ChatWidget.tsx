@@ -119,7 +119,7 @@ export default function ChatWidget() {
               Ask about Edoardo
             </h3>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
-              Powered by Claude
+              Powered by Gemini
             </p>
           </div>
 

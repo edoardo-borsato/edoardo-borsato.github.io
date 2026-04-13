@@ -6,7 +6,7 @@ Personal website with an AI chatbot that answers questions about me.
 
 - **Framework:** Next.js (App Router) + TypeScript
 - **Styling:** Tailwind CSS
-- **AI:** Anthropic Claude API
+- **AI:** Google Gemini API
 - **Deployment:** Vercel
 
 ## Getting Started
@@ -16,9 +16,9 @@ Personal website with an AI chatbot that answers questions about me.
    ```bash
    npm install
    ```
-3. Create a `.env.local` file with your Anthropic API key:
+3. Create a `.env.local` file with your Google API key (get one at [aistudio.google.com](https://aistudio.google.com/app/apikey)):
    ```
-   ANTHROPIC_API_KEY=your-api-key-here
+   GOOGLE_API_KEY=your-api-key-here
    ```
 4. Run the development server:
    ```bash
@@ -31,7 +31,7 @@ Personal website with an AI chatbot that answers questions about me.
 ```
 src/
 ├── app/
-│   ├── api/chat/route.ts    # API route proxying to Anthropic
+│   ├── api/chat/route.ts    # API route proxying to Gemini
 │   ├── layout.tsx           # Root layout
 │   ├── page.tsx             # Landing page
 │   └── globals.css          # Global styles
@@ -42,10 +42,10 @@ src/
 │   ├── ChatWidget.tsx       # AI chatbot widget
 │   └── ChatMessage.tsx      # Chat message bubble
 └── lib/
-    ├── anthropic.ts         # Anthropic API client
+    ├── gemini.ts            # Gemini API client
     └── system-prompt.ts     # System prompt with bio
 ```
 
 ## Deployment
 
-Deploy to Vercel by connecting this repository. Add `ANTHROPIC_API_KEY` as an environment variable in the Vercel dashboard under Settings > Environment Variables.
+Deploy to Vercel by connecting this repository. Add `GOOGLE_API_KEY` as an environment variable in the Vercel dashboard under Settings > Environment Variables.

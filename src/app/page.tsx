@@ -14,7 +14,7 @@ export default function Home() {
       <footer className="border-t border-zinc-200 py-8 px-6 dark:border-zinc-800">
         <p className="mx-auto max-w-3xl text-sm text-zinc-500 dark:text-zinc-500">
           &copy; {new Date().getFullYear()} Edoardo Borsato. Built with Next.js
-          and Claude.
+          and Gemini.
         </p>
       </footer>
       <ChatWidget />
