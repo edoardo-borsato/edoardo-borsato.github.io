@@ -1,5 +1,12 @@
 const projects = [
   {
+    name: "edoardo-borsato.github.io",
+    description:
+      "This website — a personal site with an AI chatbot that answers questions about me. Built with Next.js and the Anthropic API.",
+    tech: "Next.js, TypeScript, Tailwind CSS, Gemini API",
+    url: "https://github.com/edoardo-borsato/edoardo-borsato.github.io",
+  },
+  {
     name: "Xpense",
     description:
       "Personal finance tracking app built with .NET MAUI Blazor. Cross-platform mobile and desktop application.",
@@ -7,12 +14,18 @@ const projects = [
     url: "https://github.com/edoardo-borsato/xpense",
   },
   {
-    name: "edoardo-borsato.github.io",
+    name: "expenses-api",
     description:
-      "This website — a personal site with an AI chatbot that answers questions about me. Built with Next.js and the Anthropic API.",
-    tech: "Next.js, TypeScript, Tailwind CSS, Gemini API",
-    url: "https://github.com/edoardo-borsato/edoardo-borsato.github.io",
+      "A RESTful API for managing personal expenses (backend for Xpense), built with .NET and CosmosDB SDK.",
+    tech: ".NET, C#, Azure, CosmosDB",
+    url: "https://github.com/edoardo-borsato/expenses-api"
   },
+  {
+    name: "bard",
+    description: "A CLI tool for DynamoDB backup, restore, and batch delete",
+    "tech": "C#, .NET, AWS SDK",
+    url: "https://github.com/edoardo-borsato/bard"
+  }
 ];
 
 export default function Projects() {

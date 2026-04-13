@@ -49,19 +49,19 @@ export default function Experience() {
                 <span className="font-medium text-zinc-800 dark:text-zinc-300">
                   Day to day:
                 </span>{" "}
-                C#, .NET, ASP.NET Core, SQL Server, Git
+                C#, .NET, ASP.NET Core, SQL Server, PostgreSQL, Git, REST APIs
               </div>
               <div>
                 <span className="font-medium text-zinc-800 dark:text-zinc-300">
                   Regularly:
                 </span>{" "}
-                TypeScript, React, Docker, Azure, REST APIs, gRPC
+                TypeScript, Docker, AWS, Azure, gRPC, CI/CD pipelines
               </div>
               <div>
                 <span className="font-medium text-zinc-800 dark:text-zinc-300">
                   Occasionally:
                 </span>{" "}
-                Python, AWS, Kubernetes, CI/CD pipelines
+                Python, C++, React, Angular
               </div>
             </div>
           </div>

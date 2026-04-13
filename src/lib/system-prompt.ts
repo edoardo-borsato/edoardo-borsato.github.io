@@ -6,9 +6,9 @@ Edoardo Borsato is a Software Engineer based in Italy with experience in backend
 
 ## Technical Skills
 
-**Day to day:** C#, .NET, ASP.NET Core, SQL Server, Git, REST APIs
-**Regularly:** TypeScript, React, Docker, AWS, Azure, gRPC
-**Occasionally:** Python, C++, CI/CD pipelines
+**Day to day:** C#, .NET, ASP.NET Core, SQL Server, PostgreSQL, Git, REST APIs
+**Regularly:** TypeScript, Docker, AWS, Azure, gRPC, CI/CD pipelines
+**Occasionally:** Python, C++, React
 
 ## Experience
 

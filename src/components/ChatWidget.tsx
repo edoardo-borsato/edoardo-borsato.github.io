@@ -74,7 +74,7 @@ export default function ChatWidget() {
 
           case 503:
             content =
-              "Sorry, I'm unavailable right now (Free-tier project, Edoardo is poor and can't pay me!). Please try again later, in the meantime look at the links provided.";
+              "Sorry, I'm unavailable right now (Free-tier project, Edoardo is poor and can't pay for me!). Please try again later, in the meantime look at the links provided.";
             break;
 
           default:
