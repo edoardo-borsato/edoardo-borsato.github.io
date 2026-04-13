@@ -8,6 +8,23 @@ interface Message {
   content: string;
 }
 
+function formatRetryDelay(retryDelay: unknown): string {
+  if (typeof retryDelay !== "string") return "a few minutes";
+
+  // retryDelay format from Gemini: "1s", "33s", "1.932003667s"
+  const match = retryDelay.match(/^([\d.]+)s$/);
+  if (!match) return "a few minutes";
+
+  const seconds = Math.ceil(parseFloat(match[1]));
+
+  if (seconds < 60) {
+    return seconds === 1 ? "1 second" : `${seconds} seconds`;
+  }
+
+  const minutes = Math.ceil(seconds / 60);
+  return minutes === 1 ? "1 minute" : `${minutes} minutes`;
+}
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -47,6 +64,15 @@ export default function ChatWidget() {
         setMessages((prev) => [
           ...prev,
           { role: "assistant", content: data.reply },
+        ]);
+      } else if (res.status === 429) {
+        const time = formatRetryDelay(data?.retryDelay);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: `Sorry, I'm tired. Try again in ${time}.`,
+          },
         ]);
       } else {
         setMessages((prev) => [
