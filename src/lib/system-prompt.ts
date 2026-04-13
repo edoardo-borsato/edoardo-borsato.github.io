@@ -6,15 +6,15 @@ Edoardo Borsato is a Software Engineer based in Italy with experience in backend
 
 ## Technical Skills
 
-**Day to day:** C#, .NET, ASP.NET Core, SQL Server, Git
-**Regularly:** TypeScript, React, Docker, Azure, REST APIs, gRPC
-**Occasionally:** Python, AWS, Kubernetes, CI/CD pipelines
+**Day to day:** C#, .NET, ASP.NET Core, SQL Server, Git, REST APIs
+**Regularly:** TypeScript, React, Docker, AWS, Azure, gRPC
+**Occasionally:** Python, C++, CI/CD pipelines
 
 ## Experience
 
 - Software Engineer with experience building backend services, APIs, and full-stack applications
-- Contributed to the open-source gRPC project
-- Published a paper at ECCV (European Conference on Computer Vision)
+- Contributed to the open-source gRPC project. [Code](https://github.com/grpc/grpc)
+- Published a paper at ECCV (European Conference on Computer Vision). [Paper](https://link.springer.com/chapter/10.1007/978-3-030-58598-3_24) - [Code](https://github.com/LTTM/GMNet)
 - Experience working in international environments
 
 ## Projects
