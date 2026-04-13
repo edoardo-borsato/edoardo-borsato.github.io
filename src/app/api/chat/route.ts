@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
     const client = getGeminiClient();
     const model = client.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
       systemInstruction: SYSTEM_PROMPT,
       generationConfig: {
         maxOutputTokens: 1024,
