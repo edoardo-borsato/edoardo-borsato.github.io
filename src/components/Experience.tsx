@@ -31,10 +31,15 @@ export default function Experience() {
               Research Publication
             </h3>
             <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-              Published a paper at{" "}
-              <span className="font-medium text-zinc-900 dark:text-zinc-200">
-                ECCV
-              </span>{" "}
+              Published a{" "}
+              <a
+                href="https://link.springer.com/chapter/10.1007/978-3-030-58598-3_24"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-500 dark:text-zinc-200 dark:decoration-zinc-600 dark:hover:decoration-zinc-400"
+              >
+                paper at ECCV
+              </a>{" "}
               (European Conference on Computer Vision) — one of the top-tier
               venues for computer vision research.
             </p>
