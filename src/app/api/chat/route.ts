@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getGeminiClient } from "@/lib/gemini";
+import { getGeminiPool } from "@/lib/gemini";
 import { SYSTEM_PROMPT } from "@/lib/system-prompt";
 
 interface RetryInfo {
@@ -40,17 +40,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const client = getGeminiClient();
-    const model = client.getGenerativeModel({
-      model: "gemini-2.5-flash",
-      systemInstruction: SYSTEM_PROMPT,
-      generationConfig: {
-        maxOutputTokens: 1024,
-      },
+    const pool = getGeminiPool();
+    const reply = await pool.generateContent(message, SYSTEM_PROMPT, {
+      maxOutputTokens: 1024,
     });
-
-    const result = await model.generateContent(message);
-    const reply = result.response.text() || "Sorry, I could not generate a response.";
 
     return NextResponse.json({ reply });
   } catch (error) {
