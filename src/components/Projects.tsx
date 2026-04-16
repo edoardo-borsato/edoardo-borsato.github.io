@@ -2,7 +2,7 @@ const projects = [
   {
     name: "edoardo-borsato.github.io",
     description:
-      "This website — a personal site with an AI chatbot that answers questions about me. Built with Next.js and the Anthropic API.",
+      "This website — a personal site with an AI chatbot that answers questions about me. Built with Next.js and the Gemini API.",
     tech: "Next.js, TypeScript, Tailwind CSS, Gemini API",
     url: "https://github.com/edoardo-borsato/edoardo-borsato.github.io",
   },
